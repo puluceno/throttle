@@ -21,26 +21,28 @@ public class Throttler {
 		});
 	}
 
-	public int getRate() {
-		return rate;
-	}
-
-	public synchronized void setRate(int rate) {
-		this.rate = rate;
-	}
-
 	public static synchronized Throttler getInstance() {
 		if (instance == null)
 			instance = new Throttler();
 		return instance;
 	}
+	public int getRate() {
+		return rate;
+	}
+
+	public synchronized Throttler setRate(int rate) {
+		this.rate = rate;
+		return this;
+	}
+
 
 	public float getMaximunRate() {
 		return maximunRate;
 	}
 
-	public synchronized void setMaximunRate(int maximunRate) {
+	public synchronized Throttler setMaximunRate(int maximunRate) {
 		this.maximunRate = maximunRate;
+		return this;
 	}
 
 }

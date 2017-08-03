@@ -15,6 +15,7 @@ public class Test {
 		t.setMaximunRate(1);
 		t.setRate(1);
 		t.throttle(stream);
+		Throttler a = Throttler.getInstance();
 		
 		RateLimiter rateLimiter = RateLimiter.create(1);
 		long startTime = new Date().getTime();
@@ -33,4 +34,7 @@ public class Test {
 	private static void extracted2() {
 		System.out.println("B");
 	}
+	
+	
+	
 }
